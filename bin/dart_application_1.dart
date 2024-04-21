@@ -20,7 +20,7 @@ void main() {
   print(a + b);
   print(a - b);
   print(a * b);
-  print((a / b).toInt()); // print(a ~/ y) makes same result
+  print(a ~/ b); // print((a / b).toInt()) makes same result
   print(a % b);
 
 /*
@@ -51,5 +51,25 @@ IF ELSE, CASE
     default:
     print('not "a" or "b"');
   }
+
+/*
+MASSIVES
+*/
+var myList = [5, 6.2, 16, 'abcde', true]; // var myList = List(5, 6, 16, 'abcde', true)
+
+myList.add(6.7);
+myList.addAll([123, 22, 9292.1]);
+myList.remove(16);
+myList.removeAt(3);
+myList.retainWhere((element) => element.runtimeType == String); // retain, not remove!
+
+final myIntList = <int>[5, 6, 23, 77];
+myIntList.removeWhere((element) => element >= 23);
+
+print('$myList\nFirst in myIntList: ${myIntList[0]}. Last: ${myIntList.last}. Lenght: ${myIntList.length}');
+
+Set<int> digitsNoRepeat = {1, 2, 3, 4};
+digitsNoRepeat.add(2);
+print(digitsNoRepeat);
 
 }
