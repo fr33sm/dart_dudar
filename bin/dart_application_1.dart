@@ -68,8 +68,47 @@ myIntList.removeWhere((element) => element >= 23);
 
 print('$myList\nFirst in myIntList: ${myIntList[0]}. Last: ${myIntList.last}. Lenght: ${myIntList.length}');
 
-Set<int> digitsNoRepeat = {1, 2, 3, 4};
-digitsNoRepeat.add(2);
-print(digitsNoRepeat);
+///
+Set<int> digitsNoRepeat = {1, 2, 3, 4}; // elements can't repeat because it's "set"
+print('before add numbers "set" is: $digitsNoRepeat');
+digitsNoRepeat.addAll({2, 4, 5});
+print('after add 2, 4, 5 "set" is: $digitsNoRepeat');
+
+/*
+Cycles
+*/
+var list4cycles = [1, 2, 5, 7, 9];
+
+for (var i = 0; i < list4cycles.length; i++) {
+  list4cycles[i]++; // increment each element
+  print('Element $i: ${list4cycles[i]}');
+}
+
+for (int el in list4cycles){ // in this version CHANGES NOT SAVING
+  el++; // increment AGAIN each element
+  print('Element: $el');
+}
+
+list4cycles.forEach((element) { // BAD practice (according to manual)
+  element++;
+  print(element);
+ });// don't saves changes also
+
+print(list4cycles);
+
+///
+print('\nWhile & DoWhile:');
+
+i = 1; // variable already initialised earlier
+while (i < 10) {
+  print(i);
+  i++;
+} // last printed number is 9 !
+
+i = 1;
+do {
+  print(i);
+  i++;
+} while (i < 10);
 
 }
