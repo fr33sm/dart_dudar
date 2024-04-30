@@ -111,4 +111,29 @@ do {
   i++;
 } while (i < 10);
 
+/*
+Functions
+*/
+print('\nFUNCTIONS:');
+
+sum1(5, 7);
+
+print(sum2(6, 9));
+
+print(sum3(7, 8));
+
+print(sum4('qwe', 'rty'));
+
+} // HERE'S END OF MAIN
+
+void sum1(a, b){
+  print('${a + b}');
 }
+
+int sum2(int a, int b){
+  return a + b;
+}
+
+int sum3(a, b) => a + b;
+
+dynamic sum4(a, b) => a + b;
